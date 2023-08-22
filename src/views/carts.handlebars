@@ -1,0 +1,19 @@
+<div class="cart-container">
+    <h1 class="cart-title">Shopping Cart</h1>
+    <ul class="cart-list" id={{cid}}>
+        {{#each products}}
+        <li>
+            <div class="info">
+                <img src={{thumbnails}} alt=`Imagen del producto {{title}}`>
+                <div>
+                    <h2>{{title}}</h2>
+                    <p>{{quantity}} x ${{price}}</p>
+                </div>
+            </div>
+            <button id={{id}} class="delete-button">Borrar producto</button>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/carts.js"></script>

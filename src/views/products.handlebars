@@ -1,0 +1,38 @@
+<div class="container-shop">
+    <h1 class="shop-title">Shop</h1>
+    <div class="options">
+        <a class="go-to-cart">Ir al carrito</a>
+        <button class="logout" id="logout">Logout</button>
+    </div>
+    
+    {{!-- user --}}
+    <div class="user-hidden">
+        <p id="user">{{name}} {{lastname}}</p>
+        <p id="role">{{role}}</p>
+    </div>
+    
+
+    <ul class="list-container">
+        {{#each products}}
+        <li class="item-card" id={{code}} >
+            <img src={{this.thumbnails}} alt={`Imagen del producto {{title}}`} />
+            <div>
+                <h4>{{title}}</h4>
+                <p class="subtitle">{{description}}</p>
+                <p>USD <span>{{price}}</span></p>
+            </div>
+            <button class="add-to-cart" id={{_id}}>Add To Cart</button>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="next-prev-links">
+        {{#if hasPrevPage}}
+            <a href={{prevLink}}>Prev Page</a>
+        {{/if}}
+        {{#if hasNextPage}}
+            <a href={{nextLink}}>Next Page</a>
+        {{/if}}
+    </div>
+</div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./js/products.js"></script>
